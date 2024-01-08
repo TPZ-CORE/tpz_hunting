@@ -11,13 +11,6 @@ Config.PromptKey  = { key = 0x760A9C6F, label = 'Butcher' } -- G
 
 Config.tpz_leveling = true
 
--- The range for when a skinnableAnimal or Animal has a config value givenAmount of 0.
--- Example: Animals with givenAmount = {0} can be sold to the butcher or be skinned, which will give the player a random number between 1 and 3 amount of givenItem
-Config.ItemQuantity = {
-    Max = 1,
-    Min = 1
-}
-
 -- NPC Rendering Distance which is deleting the npc when being away from the bank.
 Config.NPCRenderingDistance = 30.0
 
