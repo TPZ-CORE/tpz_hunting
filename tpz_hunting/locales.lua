@@ -31,7 +31,7 @@ Locales = {
         duration = 4
     },
 
-    ['SUCCESSFYLLY_OBTAINED'] = { 
+    ['SUCCESSFULLY_OBTAINED'] = { 
         title = "Butcher", 
         message = "You have obtained X%s %s.",
         icon = "butcher",
