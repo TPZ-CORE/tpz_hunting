@@ -8,7 +8,7 @@ TriggerEvent("getTPZCore", function(cb) TPZ = cb end)
 --[[ Functions ]]--
 -----------------------------------------------------------
 
-GiveFormattedItemRewards = function (source, formattedItemsList)
+GiveFormattedItemRewards = function (source, formattedItemsList, type)
 	local _source = source
 
 	for k, v in pairs(formattedItemsList) do
@@ -29,8 +29,13 @@ GiveFormattedItemRewards = function (source, formattedItemsList)
 				TPZInv.addItem(_source, v.item, v.quantity)
 
 				local itemLabel = TPZInv.getItemLabel(v.item)
-
+				
 				local notifyData = Locales['SUCCESSFULLY_OBTAINED']
+
+				if type == "SKINNED" then
+					notifyData = Locales['SUCCESSFULLY_OBTAINED_SKINNED']
+				end
+				
 				TriggerEvent("tpz_notify:sendNotification", notifyData.title, string.format(notifyData.message, v.quantity, itemLabel), notifyData.icon, "success", notifyData.duration)
 			end
 
@@ -176,7 +181,7 @@ AddEventHandler("tpz_hunting:giveAnimalReward", function(rewardType, data, remov
 
 		Wait(250)
 
-		GiveFormattedItemRewards(_source, formattedGivenItems)
+		GiveFormattedItemRewards(_source, formattedGivenItems, rewardType)
 
 	end
 
