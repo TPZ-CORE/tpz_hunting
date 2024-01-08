@@ -30,7 +30,7 @@ GiveFormattedItemRewards = function (source, formattedItemsList)
 
 				local itemLabel = TPZInv.getItemLabel(v.item)
 
-				local notifyData = Locales['SUCCESSFYLLY_OBTAINED']
+				local notifyData = Locales['SUCCESSFULLY_OBTAINED']
 				TriggerEvent("tpz_notify:sendNotification", notifyData.title, string.format(notifyData.message, v.quantity, itemLabel), notifyData.icon, "success", notifyData.duration)
 			end
 
