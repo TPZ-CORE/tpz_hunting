@@ -133,7 +133,7 @@ AddEventHandler("tpz_hunting:giveAnimalReward", function(rewardType, data, remov
 	end
 
 	if cents > 0 then
-		table.insert(GivenMoneyList, Locales['CENTS_SYMBOL'] .. money)
+		table.insert(GivenMoneyList, Locales['CENTS_SYMBOL'] .. cents)
 		xPlayer.addAccount(1, cents)
 	end
 		
