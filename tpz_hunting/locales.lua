@@ -38,4 +38,11 @@ Locales = {
         duration = 4
     },
 
+    ['SUCCESSFULLY_OBTAINED_SKINNED'] = { 
+        title = "Hunting", 
+        message = "You have obtained X%s %s.",
+        icon = "hunting",
+        duration = 4
+    },
+
 }
