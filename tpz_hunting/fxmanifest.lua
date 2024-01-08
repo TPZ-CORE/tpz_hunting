@@ -7,4 +7,6 @@ description 'TPZ-CORE Hunting'
 
 shared_scripts { 'config.lua', 'config_animals.lua', 'locales.lua' }
 server_scripts { 'server/*.lua' }
-client_scripts { 'client/*.lua' }
+client_scripts { 'client/*.lua', 'client/main.js' }
+
+exports { 'DataViewNativeGetEventData' }
