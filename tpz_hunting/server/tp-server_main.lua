@@ -36,7 +36,7 @@ GiveFormattedItemRewards = function (source, formattedItemsList, type)
 					notifyData = Locales['SUCCESSFULLY_OBTAINED_SKINNED']
 				end
 				
-				TriggerEvent("tpz_notify:sendNotification", notifyData.title, string.format(notifyData.message, v.quantity, itemLabel), notifyData.icon, "success", notifyData.duration)
+				TriggerClientEvent("tpz_notify:sendNotification", _source, notifyData.title, string.format(notifyData.message, v.quantity, itemLabel), notifyData.icon, "success", notifyData.duration)
 			end
 
 		end
@@ -140,7 +140,7 @@ AddEventHandler("tpz_hunting:giveAnimalReward", function(rewardType, data, remov
 	if #GivenMoneyList > 0 then
         local notifyData = Locales['ANIMAL_SOLD']
 
-        TriggerEvent("tpz_notify:sendNotification", notifyData.title, notifyData.message .. table.concat(GivenMoneyList, ", "), notifyData.icon, "success", notifyData.duration)
+        TriggerClientEvent("tpz_notify:sendNotification", _source, notifyData.title, notifyData.message .. table.concat(GivenMoneyList, ", "), notifyData.icon, "success", notifyData.duration)
 	end
 		
 
