@@ -12,3 +12,5 @@ server_scripts { 'server/*.lua' }
 client_scripts { 'client/*.lua', 'client/main.js' }
 
 exports { 'DataViewNativeGetEventData' }
+
+lua54 'yes'
