@@ -59,11 +59,11 @@ Config.SkinnableAnimals = {
     [759906147]    = { name = "North American Beaver",   givenItem = { "fur" }, givenAmount = { 1 }, experience = 10  },
 
     -- Snakes
-    [-229688157]   = { name = "Water Snake",             givenItem = { "SnakeSkin", "Snake_Poison" }, givenAmount = { 1, 1 }, experience = 5 },
-    [-1790499186]  = { name = "Snake Red Boa",           givenItem = { "SnakeSkin", "Snake_Poison" }, givenAmount = { 1, 1 }, experience = 5 },
-    [1464167925]   = { name = "Snake Fer-De-Lance",      givenItem = { "SnakeSkin", "Snake_Poison" }, givenAmount = { 1, 1 }, experience = 5 },
-    [846659001]    = { name = "Black-Tailed Rattlesnake",givenItem = { "SnakeSkin", "Snake_Poison" }, givenAmount = { 1, 1 }, experience = 5 },
-    [545068538]    = { name = "Western Rattlesnake",     givenItem = { "SnakeSkin", "Snake_Poison" }, givenAmount = { 1, 1 }, experience = 5 },
+    [-229688157]   = { name = "Water Snake",             givenItem = { "snake_skin", "snake_poison" }, givenAmount = { 1, 1 }, experience = 5 },
+    [-1790499186]  = { name = "Snake Red Boa",           givenItem = { "snake_skin", "snake_poison" }, givenAmount = { 1, 1 }, experience = 5 },
+    [1464167925]   = { name = "Snake Fer-De-Lance",      givenItem = { "snake_skin", "snake_poison" }, givenAmount = { 1, 1 }, experience = 5 },
+    [846659001]    = { name = "Black-Tailed Rattlesnake",givenItem = { "snake_skin", "snake_poison" }, givenAmount = { 1, 1 }, experience = 5 },
+    [545068538]    = { name = "Western Rattlesnake",     givenItem = { "snake_skin", "snake_poison" }, givenAmount = { 1, 1 }, experience = 5 },
 
     -- Feathers
     [1104697660]   = { name = "Vulture",                  givenItem = { "feathers" }, givenAmount = { {1, 3} }, experience = 10 },
