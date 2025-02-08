@@ -17,9 +17,7 @@ AddEventHandler("onResourceStop", function(resourceName)
         end
 
         if v.NPC then
-            DeleteEntity(v.NPC)
-            DeletePed(v.NPC)
-            SetEntityAsNoLongerNeeded(v.NPC)
+            RemoveEntityProperly(v.NPC)
         end
     end
 
@@ -79,7 +77,7 @@ Citizen.CreateThread(function ()
 end)
 
 --[[-------------------------------------------------------
- NPC Management
+ Models Management
 ]]---------------------------------------------------------
 
 LoadModel = function(model)
@@ -88,6 +86,16 @@ LoadModel = function(model)
 
     while not HasModelLoaded(model) do RequestModel(model)
         Citizen.Wait(100)
+    end
+end
+
+RemoveEntityProperly = function(entity, objectHash)
+    DeleteEntity(entity)
+    DeletePed(entity)
+    SetEntityAsNoLongerNeeded( entity )
+
+    if objectHash then
+        SetModelAsNoLongerNeeded(objectHash)
     end
 end
 
