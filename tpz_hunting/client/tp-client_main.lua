@@ -3,8 +3,8 @@
 --[[ Events ]]--
 -----------------------------------------------------------
 
-RegisterNetEvent('tpz_hunting:removeSoldEntity')
-AddEventHandler('tpz_hunting:removeSoldEntity', function(entity)
+RegisterNetEvent('tpz_hunting:client:deleteEntity')
+AddEventHandler('tpz_hunting:client:deleteEntity', function(entity)
 
     if entity then
 
