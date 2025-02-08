@@ -11,6 +11,8 @@ AddEventHandler("onResourceStop", function(resourceName)
         return
     end
 
+    Citizen.InvokeNative(0x00EDE88D4D13CF59, Prompts) -- UiPromptDelete
+  
     for i, v in pairs(Config.Locations) do
         if v.BlipHandle then
             RemoveBlip(v.BlipHandle)
@@ -130,7 +132,7 @@ end
 ]]---------------------------------------------------------
 
 -- @GetTableLength returns the length of a table.
-function GetTableLength(T)
+GetTableLength = function(T)
     local count = 0
     for _ in pairs(T) do count = count + 1 end
     return count
