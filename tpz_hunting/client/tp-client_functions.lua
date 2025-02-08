@@ -1,5 +1,5 @@
 
-local Prompts    = GetRandomIntInRange(0, 0xffffff)
+local Prompts     = GetRandomIntInRange(0, 0xffffff)
 local PromptsList = {}
 
 --[[-------------------------------------------------------
@@ -59,19 +59,24 @@ end
 ]]---------------------------------------------------------
 
 Citizen.CreateThread(function ()
-    for index, blip in pairs (Config.Locations) do
 
-        if blip.BlipData and blip.BlipData.Enabled then
+    if Config.Locations and GetTableLength(Config.Locations) > 0 then
+        
+        for index, blip in pairs (Config.Locations) do
 
-            local blipHandle = N_0x554d9d53f696d002(1664425300, blip.Coords.x, blip.Coords.y, blip.Coords.z)
+            if blip.BlipData and blip.BlipData.Enabled then
+
+                local blipHandle = N_0x554d9d53f696d002(1664425300, blip.Coords.x, blip.Coords.y, blip.Coords.z)
     
-            SetBlipSprite(blipHandle, blip.BlipData.Sprite, 1)
-            SetBlipScale(blipHandle, 0.1)
-            Citizen.InvokeNative(0x9CB1A1623062F402, blipHandle, blip.BlipData.Title)
+                SetBlipSprite(blipHandle, blip.BlipData.Sprite, 1)
+                SetBlipScale(blipHandle, 0.1)
+                Citizen.InvokeNative(0x9CB1A1623062F402, blipHandle, blip.BlipData.Title)
 
                     
-            Config.Locations[index].BlipHandle = blipHandle
+                Config.Locations[index].BlipHandle = blipHandle
 
+            end
+    
         end
 
     end
