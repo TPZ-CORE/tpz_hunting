@@ -17,8 +17,9 @@ AddEventHandler("onResourceStop", function(resourceName)
         end
 
         if v.NPC then
-            RemoveEntityProperly(v.NPC)
+            RemoveEntityProperly(v.NPC, GetHashKey(v.NPCData.Model))
         end
+
     end
 
     ClearPedTasks(PlayerPedId())
