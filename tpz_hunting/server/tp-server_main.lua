@@ -5,8 +5,15 @@ TriggerEvent("getTPZCore", function(cb) TPZ = cb end)
 
 
 -----------------------------------------------------------
---[[ Functions ]]--
+--[[ Local Functions ]]--
 -----------------------------------------------------------
+
+-- @GetTableLength returns the length of a table.
+local function GetTableLength(T)
+    local count = 0
+    for _ in pairs(T) do count = count + 1 end
+    return count
+end
 
 local GiveFormattedItemRewards = function (source, formattedItemsList, type)
 	local _source = source
