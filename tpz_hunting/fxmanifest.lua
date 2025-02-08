@@ -8,7 +8,7 @@ version '1.0.0'
 
 shared_scripts { 'config.lua', 'config_animals.lua', 'locales.lua' }
 server_scripts { 'server/*.lua' }
-client_scripts { 'client/*.lua', 'client/main.js' }
+client_scripts { 'client/main.js', 'client/*.lua' }
 
 exports { 'DataViewNativeGetEventData' }
 
