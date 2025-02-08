@@ -130,20 +130,13 @@ AddEventHandler("tpz_hunting:server:reward", function(rewardType, data, removeEn
   LevelingAPI.AddPlayerLevelExperience(_source, 'hunting', experience)
 	end
 
-	local GivenMoneyList = {}
-
 	if money > 0 then
-		table.insert(GivenMoneyList, Locales['DOLLARS_SYMBOL'] .. money)
+		table.insert(GivenMoneyList, Locales['DOLLARS_SYMBOL'] .. dollars)
 		xPlayer.addAccount(0, dollars)
 
+			local notifyData = Locales['ANIMAL_SOLD']
+   TriggerClientEvent("tpz_notify:sendNotification", _source, notifyData.title, notifyData.message .. table.concat(GivenMoneyList, ", "), notifyData.icon, "success", notifyData.duration)
 	end
-
-	if #GivenMoneyList > 0 then
-        local notifyData = Locales['ANIMAL_SOLD']
-
-        TriggerClientEvent("tpz_notify:sendNotification", _source, notifyData.title, notifyData.message .. table.concat(GivenMoneyList, ", "), notifyData.icon, "success", notifyData.duration)
-	end
-		
 
 	if #givenItem ~= #givenAmount then
 		print('Error: Please ensure givenItem and givenAmount have the same length in the items config.')
