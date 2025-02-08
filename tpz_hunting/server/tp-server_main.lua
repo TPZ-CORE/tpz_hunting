@@ -18,9 +18,6 @@ local GiveFormattedItemRewards = function (source, formattedItemsList, type)
 			v.quantity = 1 
 		end
 
-		math.randomseed(os.time())
-		v.quantity = math.random(v.quantity, v.quantity)
-
 		if v.item then
 
 			local canCarryItem  = TPZInv.canCarryItem(_source, v.item, v.quantity)
@@ -160,6 +157,7 @@ AddEventHandler("tpz_hunting:server:reward", function(rewardType, data, removeEn
 			local quantity = 0
 			
 			if type(givenAmount[k]) == "table" then
+				math.randomseed(os.time())
 				quantity = math.random(tonumber(givenAmount[k][1]) or 0, tonumber(givenAmount[k][2]) or 1)
 
 			else
