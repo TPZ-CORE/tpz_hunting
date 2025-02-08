@@ -54,7 +54,7 @@ AddEventHandler("tpz_hunting:server:reward", function(rewardType, data, removeEn
 	local _source   = source
 	local xPlayer   = TPZ.GetPlayer(_source)
 
-	local money, cents, xp = 0, 0, 0
+	local dollaes, experience = 0, 0
 
 	local givenItem, givenAmount = {},{}
 
@@ -78,7 +78,7 @@ AddEventHandler("tpz_hunting:server:reward", function(rewardType, data, removeEn
 		if animal then
 			found = true
 
-			money, cents, xp = animal.money or 0, animal.cents or 0, animal.xp or 0
+			dollars, experience = animal.dollars or 0, animal.experience or 0
 			
 			local multiplier = 1.0
 
@@ -92,7 +92,7 @@ AddEventHandler("tpz_hunting:server:reward", function(rewardType, data, removeEn
 				multiplier = animal.qualityMultiplier[3]
 			end
 			
-			money, cents, xp = money * multiplier, cents * multiplier, xp * multiplier
+			dollars, experience = dollars * multiplier, experience * multiplier
 		end
 
 	elseif rewardType == "CARCASS" then
@@ -105,7 +105,7 @@ AddEventHandler("tpz_hunting:server:reward", function(rewardType, data, removeEn
 			givenItem   = animal.givenItem or {}
 			givenAmount = animal.givenAmount or {}
 
-			money, cents, xp = animal.money or 0, animal.cents or 0, animal.xp or 0
+			dollars, experience = animal.dollars or 0, animal.experience or 0
 		end
 	end
 	
@@ -122,14 +122,14 @@ AddEventHandler("tpz_hunting:server:reward", function(rewardType, data, removeEn
 	-- Giving TPZ Leveling experience Points if more than 0 and tpz_leveling is enabled.
 	if Config.tpz_leveling and xp > 0 then
   local LevelingAPI = exports.tpz_leveling:getAPI()
-  LevelingAPI.AddPlayerLevelExperience(_source, 'hunting', xp)
+  LevelingAPI.AddPlayerLevelExperience(_source, 'hunting', experience)
 	end
 
 	local GivenMoneyList = {}
 
 	if money > 0 then
 		table.insert(GivenMoneyList, Locales['DOLLARS_SYMBOL'] .. money)
-		xPlayer.addAccount(0, money)
+		xPlayer.addAccount(0, dollars)
 
 	end
 
