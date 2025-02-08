@@ -1,4 +1,7 @@
 
+local Prompts    = GetRandomIntInRange(0, 0xffffff)
+local PromptsList = {}
+
 --[[-------------------------------------------------------
  Handlers
 ]]---------------------------------------------------------
@@ -28,9 +31,6 @@ end)
  Prompts
 ]]---------------------------------------------------------
 
-Prompts       = GetRandomIntInRange(0, 0xffffff)
-PromptsList   = {}
-
 RegisterActionPrompt = function()
 
     local str      = Locales['PROMPT_ACTION']
@@ -49,6 +49,10 @@ RegisterActionPrompt = function()
     PromptRegisterEnd(dPrompt)
 
     PromptsList = dPrompt
+end
+
+function GetPromptData()
+    return Prompts, PromptList
 end
 
 --[[-------------------------------------------------------
