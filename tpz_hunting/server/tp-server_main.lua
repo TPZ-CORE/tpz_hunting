@@ -130,7 +130,7 @@ AddEventHandler("tpz_hunting:server:reward", function(rewardType, data, removeEn
 		LevelingAPI.AddPlayerLevelExperience(_source, 'hunting', experience)
 	end
 
-	if money > 0 then
+	if dollars > 0 then
 
 		xPlayer.addAccount(0, dollars)
 
