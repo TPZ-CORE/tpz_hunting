@@ -113,10 +113,6 @@ end
 -- The following thread is checking for animals skin, plucked and stored.
 Citizen.CreateThread(function()
 
-    if Config.PlayCanMercyKill then
-        Citizen.InvokeNative(0x39363DFD04E91496, PlayerId(), true) -- _SET_PLAYER_CAN_MERCY_KILL
-    end
-
     while true do
         Citizen.Wait(0)
 
