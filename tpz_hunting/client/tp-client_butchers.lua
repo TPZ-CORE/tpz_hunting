@@ -43,11 +43,12 @@ Citizen.CreateThread(function()
                 if distance <= locationConfig.ActionDistance then
                     sleep = false
 
-                    local label = CreateVarString(10, 'LITERAL_STRING', Config.PromptKey.label)
-    
-                    PromptSetActiveGroupThisFrame(Prompts, label)
+                    local promptGroup, promptList = GetPromptData()
 
-                    if PromptHasHoldModeCompleted(PromptsList) then
+                    local label = CreateVarString(10, 'LITERAL_STRING', Config.PromptKey.label)
+                    PromptSetActiveGroupThisFrame(promptGroup, label)
+
+                    if PromptHasHoldModeCompleted(promptList) then
 
                         SellButcherAnimal()
 
