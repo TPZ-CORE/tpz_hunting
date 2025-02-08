@@ -54,7 +54,7 @@ AddEventHandler("tpz_hunting:server:reward", function(rewardType, data, removeEn
 	local _source   = source
 	local xPlayer   = TPZ.GetPlayer(_source)
 
-	local dollaes, experience = 0, 0
+	local dollars, experience = 0, 0
 
 	local givenItem, givenAmount = {},{}
 
