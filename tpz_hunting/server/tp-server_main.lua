@@ -126,8 +126,8 @@ AddEventHandler("tpz_hunting:server:reward", function(rewardType, data, removeEn
 
 	-- Giving TPZ Leveling experience Points if more than 0 and tpz_leveling is enabled.
 	if Config.tpz_leveling and xp > 0 then
-  local LevelingAPI = exports.tpz_leveling:getAPI()
-  LevelingAPI.AddPlayerLevelExperience(_source, 'hunting', experience)
+		local LevelingAPI = exports.tpz_leveling:getAPI()
+		LevelingAPI.AddPlayerLevelExperience(_source, 'hunting', experience)
 	end
 
 	if money > 0 then
