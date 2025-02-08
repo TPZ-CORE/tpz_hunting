@@ -49,8 +49,8 @@ end
 --[[ Events ]]--
 -----------------------------------------------------------
 
-RegisterServerEvent("tpz_hunting:giveAnimalReward")
-AddEventHandler("tpz_hunting:giveAnimalReward", function(rewardType, data, removeEntity)
+RegisterServerEvent("tpz_hunting:server:reward")
+AddEventHandler("tpz_hunting:server:reward", function(rewardType, data, removeEntity)
 	local _source   = source
 	local xPlayer   = TPZ.GetPlayer(_source)
 
