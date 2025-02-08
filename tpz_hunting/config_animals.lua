@@ -13,8 +13,8 @@
 -- If you are giving 1 meat and 1 feathers, the length of the givenAmount must be (2), for example {1, 1} which will give 1 meat and 1 feather.
 
 Config.SkinnableAnimals = {
-    [-1124266369]  = { name = "Bear",                    givenItem = { "bearHeart" },         givenAmount = { 1 },         experience = 30 },
-    [730092646]    = { name = "American Black Bear",     givenItem = { "bearHeart" },         givenAmount = { 1 },         experience = 30 },
+    [-1124266369]  = { name = "Bear",                    givenItem = { "heart_bear" },         givenAmount = { 1 },         experience = 30 },
+    [730092646]    = { name = "American Black Bear",     givenItem = { "heart_bear" },         givenAmount = { 1 },         experience = 30 },
 
     -- Meat
     [-466054788]   = { name = "Wild Turkey",             givenItem = { "meat", "feathers" },  givenAmount = { 1, {1, 3} }, experience = 15 },
@@ -36,8 +36,8 @@ Config.SkinnableAnimals = {
    
     [252669332]    = { name = "American Red Fox",        givenItem = { "pelt"},               givenAmount = { 1 },         experience = 15 },
     [-1143398950]  = { name = "Big Grey Wolf",           givenItem = { "pelt" },              givenAmount = { 1 },         experience = 25 },
-    [-885451903]   = { name = "Medium Grey Wolf",        givenItem = { "wolfheart", "pelt" }, givenAmount = { 1, 1 },      experience = 25 },
-    [-829273561]   = { name = "Small Grey Wolf",         givenItem = { "wolfheart", "pelt" }, givenAmount = { 1, 1 },      experience = 25 },
+    [-885451903]   = { name = "Medium Grey Wolf",        givenItem = { "heart_wolf", "pelt" }, givenAmount = { 1, 1 },      experience = 25 },
+    [-829273561]   = { name = "Small Grey Wolf",         givenItem = { "heart_wolf", "pelt" }, givenAmount = { 1, 1 },      experience = 25 },
     [1755643085]   = { name = "American Pronghorn Doe",  givenItem = { "pelt" },              givenAmount = { 1 },         experience = 15 },
     [1654513481]   = { name = "Panther",                 givenItem = { "pelt" },              givenAmount = { 1 },         experience = 40 },
     [90264823]     = { name = "Cougar",                  givenItem = { "pelt" },              givenAmount = { 1 },         experience = 40 },
