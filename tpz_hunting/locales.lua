@@ -4,10 +4,6 @@ Locales = {
 
     ['PROMPT_ACTION']        = "Sell",
 
-    ['DOLLARS_SYMBOL']       = "$",
-    ['CENTS_SYMBOL']         = "¢",
-
-    
     ['NOT_HOLDING_ANIMAL'] = { 
         title = "Butcher", 
         message = "You must be holding an animal or pelt to use this action.",
@@ -15,18 +11,16 @@ Locales = {
         duration = 4
     },
 
-    
     ['BLACKLISTED_ANIMAL'] = { 
         title = "Butcher", 
         message = "I am sorry but i won't buy that animal or pelt.",
         icon = "butcher",
         duration = 4
     },
-
         
     ['ANIMAL_SOLD'] = { 
         title = "Butcher", 
-        message = "Thank you for the deal, you have received ",
+        message = "Thank you for the deal, you have received %s dollars.",
         icon = "butcher",
         duration = 4
     },
