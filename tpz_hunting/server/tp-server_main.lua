@@ -18,6 +18,7 @@ local GiveFormattedItemRewards = function (source, formattedItemsList, type)
 			v.quantity = 1 
 		end
 
+		math.randomseed(os.time())
 		v.quantity = math.random(v.quantity, v.quantity)
 
 		if v.item then
