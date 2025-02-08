@@ -144,7 +144,7 @@ Citizen.CreateThread(function()
                     if model and Config.SkinnableAnimals[model] and PlayerPedId() == ped and unk == 1 then
 
                         -- The following event is giving rewards upon animal skinning.
-                        TriggerServerEvent("tpz_hunting:giveAnimalReward", "SKINNED", { model = model }, false )
+                        TriggerServerEvent("tpz_hunting:server:reward", "SKINNED", { model = model }, false )
                     end
 
                 end
