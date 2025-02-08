@@ -8,7 +8,7 @@ TriggerEvent("getTPZCore", function(cb) TPZ = cb end)
 --[[ Functions ]]--
 -----------------------------------------------------------
 
-GiveFormattedItemRewards = function (source, formattedItemsList, type)
+local GiveFormattedItemRewards = function (source, formattedItemsList, type)
 	local _source = source
 
 	for k, v in pairs(formattedItemsList) do
