@@ -108,14 +108,17 @@ end
 SpawnNPC = function(index)
     local v = Config.Locations[index].NPCData
 
-    LoadModel(v.Model)
-
     if v.Enabled then
+        
+        LoadModel(v.Model) -- we load the model when we know npc is enabled. 
+
         local npc = CreatePed(v.Model, v.Coords.x, v.Coords.y, v.Coords.z, v.Coords.h, false, true, true, true)
         Citizen.InvokeNative(0x283978A15512B2FE, npc, true)
         SetEntityCanBeDamaged(npc, false)
         SetEntityInvincible(npc, true)
+        
         Wait(500)
+        
         FreezeEntityPosition(npc, true)
         SetBlockingOfNonTemporaryEvents(npc, true)
         Config.Locations[index].NPC = npc
