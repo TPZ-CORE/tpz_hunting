@@ -121,7 +121,8 @@ AddEventHandler("tpz_hunting:server:reward", function(rewardType, data, removeEn
 
 	-- Giving TPZ Leveling experience Points if more than 0 and tpz_leveling is enabled.
 	if Config.tpz_leveling and xp > 0 then
-		TriggerEvent("tp_leveling:AddLevelExperience", _source, "hunting", xp)
+  local LevelingAPI = exports.tpz_leveling:getAPI()
+  LevelingAPI.AddPlayerLevelExperience(_source, 'hunting', xp)
 	end
 
 	local GivenMoneyList = {}
@@ -132,11 +133,6 @@ AddEventHandler("tpz_hunting:server:reward", function(rewardType, data, removeEn
 
 	end
 
-	if cents > 0 then
-		table.insert(GivenMoneyList, Locales['CENTS_SYMBOL'] .. cents)
-		xPlayer.addAccount(1, cents)
-	end
-		
 	if #GivenMoneyList > 0 then
         local notifyData = Locales['ANIMAL_SOLD']
 
