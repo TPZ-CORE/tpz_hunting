@@ -2,7 +2,7 @@ Locales = {}
 
 Locales = {
 
-    ['PROMPT_ACTION']        = "Sell",
+    ['PROMPT_ACTION'] = "Sell",
 
     ['NOT_HOLDING_ANIMAL'] = { 
         title = "Butcher", 
