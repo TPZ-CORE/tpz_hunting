@@ -14,8 +14,6 @@ Config.tpz_leveling = true
 -- NPC Rendering Distance which is deleting the npc when being away from the bank.
 Config.NPCRenderingDistance = 30.0
 
--- Enable if you want the player to perform a mercy kill.
-Config.PlayCanMercyKill = true
 -----------------------------------------------------------
 --[[ Butcher Locations ]]--
 -----------------------------------------------------------
