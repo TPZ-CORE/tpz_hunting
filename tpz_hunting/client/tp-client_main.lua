@@ -39,7 +39,7 @@ RewardBasedOnPeltQuality = function(quality, entity, cb)
     end
 
     if skinFound then
-        TriggerServerEvent("tpz_hunting:giveAnimalReward", "PELT", { model = foundModel, quality = quality, entity = entity }, true)
+        TriggerServerEvent("tpz_hunting:server:reward", "PELT", { model = foundModel, quality = quality, entity = entity }, true)
 		cb()
     end
 end
