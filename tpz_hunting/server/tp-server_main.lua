@@ -116,7 +116,7 @@ AddEventHandler("tpz_hunting:server:reward", function(rewardType, data, removeEn
 
 	-- If removeEntity is enabled, we remove the entity which was sold in the butcher.
 	if removeEntity then
-		TriggerClientEvent('tpz_hunting:removeSoldEntity', _source, data.entity)
+		TriggerClientEvent('tpz_hunting:client:deleteEntity', _source, data.entity)
 	end
 
 	-- Giving TPZ Leveling experience Points if more than 0 and tpz_leveling is enabled.
