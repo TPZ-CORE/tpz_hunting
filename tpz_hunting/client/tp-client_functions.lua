@@ -53,7 +53,7 @@ RegisterActionPrompt = function()
 end
 
 function GetPromptData()
-    return Prompts, PromptList
+    return Prompts, PromptsList
 end
 
 --[[-------------------------------------------------------
