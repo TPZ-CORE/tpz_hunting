@@ -14,4 +14,4 @@
 
 ## Disclaimer and Credits
 
-Credits to VORP for sharing this script so we could modified based on our Framework and do the modifications we needed. The original script can be found here: https://github.com/VORPCORE/vorp_fishing
+Credits to VORP for sharing this script so we could modified based on our Framework and do the modifications we needed. The original script can be found here: https://github.com/VORPCORE/vorp_hunting
