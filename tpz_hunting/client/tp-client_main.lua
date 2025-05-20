@@ -80,7 +80,7 @@ SellButcherAnimal = function() -- Selling animal function
         if Config.Animals[model] then
             hasSoldHoldingAnimal = true
             
-			TriggerServerEvent("tpz_hunting:giveAnimalReward", "CARCASS", { model = model, entity = holding }, true)
+			TriggerServerEvent("tpz_hunting:server:reward", "CARCASS", { model = model, entity = holding }, true)
         
         else 
 
