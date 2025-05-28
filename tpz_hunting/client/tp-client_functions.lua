@@ -32,24 +32,28 @@ end)
  Prompts
 ]]---------------------------------------------------------
 
-RegisterActionPrompt = function()
+RegisterActionPrompts = function()
 
-    local str      = Locales['PROMPT_ACTION']
-    local keyPress = Config.PromptKey.key
+    for action, prompt in pairs (Config.Prompts) do
 
-    local dPrompt = PromptRegisterBegin()
-    PromptSetControlAction(dPrompt, keyPress)
-    str = CreateVarString(10, 'LITERAL_STRING', str)
-    PromptSetText(dPrompt, str)
-    PromptSetEnabled(dPrompt, 1)
-    PromptSetVisible(dPrompt, 1)
-    PromptSetStandardMode(dPrompt, 1)
-    PromptSetHoldMode(dPrompt, 500)
-    PromptSetGroup(dPrompt, Prompts)
-    Citizen.InvokeNative(0xC5F428EE08FA7F2C, dPrompt, true)
-    PromptRegisterEnd(dPrompt)
+        local str      = prompt.label
+        local keyPress = Config.Keys[prompt.key]
+    
+        local dPrompt = PromptRegisterBegin()
+        PromptSetControlAction(dPrompt, keyPress)
+        str = CreateVarString(10, 'LITERAL_STRING', str)
+        PromptSetText(dPrompt, str)
+        PromptSetEnabled(dPrompt, 1)
+        PromptSetVisible(dPrompt, 1)
+        PromptSetStandardMode(dPrompt, 1)
+        PromptSetHoldMode(dPrompt, 500)
+        PromptSetGroup(dPrompt, Prompts)
+        Citizen.InvokeNative(0xC5F428EE08FA7F2C, dPrompt, true)
+        PromptRegisterEnd(dPrompt)
 
-    PromptsList = dPrompt
+        table.insert(PromptsList, {prompt = dPrompt, type = action} )
+    end
+
 end
 
 function GetPromptData()
