@@ -3,7 +3,18 @@ Config = {}
 
 Config.Debug = true
 
-Config.PromptKey  = { key = 0x760A9C6F, label = 'Butcher' } -- G
+Config.Keys = {
+    ['G'] = 0x760A9C6F,["B"] = 0x4CC0E2FE,['S'] = 0xD27782E3,['W'] = 0x8FD015D8,['H'] = 0x24978A28,
+    ['U'] = 0xD8F73058,["R"] = 0xE30CD707,["ENTER"] = 0xC7B5340A,['E'] = 0xCEFD9220,["J"] = 0xF3830D8E,
+    ['F'] = 0xB2F377E8, ['C'] = 0x9959A6F0,
+    ['L'] = 0x80F28E95, ['BACKSPACE'] = 0x156F7119,["DOWN"] = 0x05CA7C52,["UP"] = 0x6319DB71,["LEFT"] = 0xA65EBAB4,
+    ["RIGHT"] = 0xDEB34313, ["SPACEBAR"] = 0xD9D0E1C0, ["DEL"] = 0x4AF4D473,
+}
+
+Config.Prompts  = { 
+    ['SELL']  = { key = 'G', label = 'Sell' },
+    ['STORE'] = { enabled = false, key = 'ENTER', label = 'Store' }, -- set @enabled to false if you don't the butcher to contain a store.
+}
 
 -----------------------------------------------------------
 --[[ General ]]--
