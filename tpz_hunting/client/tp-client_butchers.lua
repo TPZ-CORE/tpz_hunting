@@ -4,7 +4,7 @@
 ]]---------------------------------------------------------
 
 Citizen.CreateThread(function()
-    RegisterActionPrompt()
+    RegisterActionPrompts()
 
     while true do
         Citizen.Wait(0)
@@ -42,16 +42,32 @@ Citizen.CreateThread(function()
 
                     local promptGroup, promptList = GetPromptData()
 
-                    local label = CreateVarString(10, 'LITERAL_STRING', Config.PromptKey.label)
+                    local label = CreateVarString(10, 'LITERAL_STRING', Locales['PROMPT_ACTION'])
                     PromptSetActiveGroupThisFrame(promptGroup, label)
 
-                    if PromptHasHoldModeCompleted(promptList) then
+                    for index, prompt in pairs (promptList) do
 
-                        SellButcherAnimal()
+                        if not Config.Prompts['STORE'].enabled and prompt.type == 'STORE' then
+                            PromptSetEnabled(prompt.prompt, 0)
+                            PromptSetVisible(prompt.prompt, 0)
+                        end
 
-                        Wait(2000)
-                    end
+                        if PromptHasHoldModeCompleted(prompt.prompt) then
+
+                            if prompt.type == 'SELL' then
+                                SellButcherAnimal()
     
+                            elseif prompt.type == 'STORE' then
+                                Wait(500)
+                                exports.tpz_stores:OpenStoreByName('BUTCHER')
+                            end
+
+                            Wait(2000)
+                        end
+    
+                        
+                    end
+
                 end
 
             end
