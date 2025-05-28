@@ -13,7 +13,7 @@ Config.Keys = {
 
 Config.Prompts  = { 
     ['SELL']  = { key = 'G', label = 'Sell' },
-    ['STORE'] = { enabled = false, key = 'ENTER', label = 'Store' }, -- set @enabled to false if you don't the butcher to contain a store.
+    ['STORE'] = { enabled = true, key = 'ENTER', label = 'Store' }, -- set @enabled to false if you don't the butcher to contain a store.
 }
 
 -----------------------------------------------------------
