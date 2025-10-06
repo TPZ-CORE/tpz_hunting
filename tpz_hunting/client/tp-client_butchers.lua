@@ -7,7 +7,6 @@ Citizen.CreateThread(function()
     RegisterActionPrompts()
 
     while true do
-        Citizen.Wait(0)
 
         local sleep        = 1000
 
@@ -59,7 +58,7 @@ Citizen.CreateThread(function()
 
                         elseif prompt.type == 'STORE' then
                             Wait(500)
-                            exports.tpz_stores:OpenStoreByName('BUTCHER')
+                            exports.tp_stores:openStoreByName('BUTCHER')
                         end
 
                         Wait(2000)
