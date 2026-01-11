@@ -64,6 +64,7 @@ AddEventHandler("tpz_hunting:server:reward", function(rewardType, data, removeEn
 
 			givenItem    = animal.givenItem or {}
 			givenAmount  = animal.givenAmount or {}
+			experience   = animal.experience
 		end
 
 	elseif rewardType == "PELT" then
@@ -103,7 +104,13 @@ AddEventHandler("tpz_hunting:server:reward", function(rewardType, data, removeEn
 			dollars, experience = animal.dollars or 0, animal.experience or 0
 		end
 	end
-	
+		
+	-- Giving TPZ Leveling experience Points if more than 0 and tpz_leveling is enabled.
+	if Config.tpz_leveling and experience > 0 then
+		local LevelingAPI = exports.tpz_leveling:getAPI()
+		LevelingAPI.AddPlayerLevelExperience(_source, 'hunting', experience)
+	end
+		
 	-- If for any reason the rewardType is false, we prevent the rest code for running.
 	if not found then
 		return
@@ -112,12 +119,6 @@ AddEventHandler("tpz_hunting:server:reward", function(rewardType, data, removeEn
 	-- If removeEntity is enabled, we remove the entity which was sold in the butcher.
 	if removeEntity then
 		TriggerClientEvent('tpz_hunting:client:deleteEntity', _source, data.entity)
-	end
-
-	-- Giving TPZ Leveling experience Points if more than 0 and tpz_leveling is enabled.
-	if Config.tpz_leveling and experience > 0 then
-		local LevelingAPI = exports.tpz_leveling:getAPI()
-		LevelingAPI.AddPlayerLevelExperience(_source, 'hunting', experience)
 	end
 
 	if dollars > 0 then
