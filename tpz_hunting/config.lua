@@ -25,6 +25,8 @@ Config.tpz_leveling = true
 -- NPC Rendering Distance which is deleting the npc when being away from the bank.
 Config.NPCRenderingDistance = 30.0
 
+-- Set to false if you using tpz_inventory_items_display script which shows you already what items are added into player's inventory.
+Config.DisplaySkinnedAnimalNotification = true 
 -----------------------------------------------------------
 --[[ Butcher Locations ]]--
 -----------------------------------------------------------
