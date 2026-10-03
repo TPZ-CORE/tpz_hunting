@@ -27,7 +27,7 @@ local GiveFormattedItemRewards = function (source, formattedItemsList, type)
 				
 				local notifyData = Locales['SUCCESSFULLY_OBTAINED']
 
-				if type == "SKINNED" then
+				if type == "SKINNED" and Config.DisplaySkinnedAnimalNotification then
 					notifyData = Locales['SUCCESSFULLY_OBTAINED_SKINNED']
 				end
 				
